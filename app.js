@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const app = express();
+const port = process.env.PORT || 2000;
 hbs.registerPartials(__dirname+'/views/partials');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
@@ -12,4 +13,4 @@ app.get('/', (req, res) =>{
   })
 });
 
-app.listen(2000, () => console.log('Example app listening on port 2000!'))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
